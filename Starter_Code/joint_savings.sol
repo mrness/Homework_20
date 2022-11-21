@@ -11,7 +11,7 @@ contract JointSavings {
     uint public lastWithdrawAmount;
     uint public contractBalance;
 
-    function withdraw(uint amount, address payable recipient){
+    function withdraw(uint amount, address payable recipient) public {
 
         
         require(recipient == accountOne || recipient == accountTwo, "You don't own this account!");
@@ -42,5 +42,7 @@ contract JointSavings {
     /*
     Finally, add the **default fallback function** so that your contract can store Ether sent from outside the deposit function.
     */
-    function() external payable {}
+    function() external payable {
+        contractBalance = address(this).balance;
+    }
 }
