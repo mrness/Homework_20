@@ -1,7 +1,4 @@
-//Joint Savings Account
-
-
-pragma solidity ^0.5.0;
+pragma solidity ^0.5.17;
 
 contract JointSavings {
 
@@ -43,6 +40,5 @@ contract JointSavings {
     Finally, add the **default fallback function** so that your contract can store Ether sent from outside the deposit function.
     */
     function() external payable {
-        contractBalance = address(this).balance;
     }
 }
